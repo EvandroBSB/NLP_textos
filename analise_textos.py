@@ -107,7 +107,7 @@ if texto:
     palavras_mais_comuns = frequencia_palavras.most_common(20)
     
     # Adiciona outro subtítulo no aplicativo Streamlit para indicar que as próximas informações são as 20 palavras mais frequentes, excluindo stopwords.
-    st.subheader('20 Palavras Mais Frequentes (sem palavras irrelevantes - stopword - tais como "e", "ou", "mas", "se", "um", "uma", "os", "das", "de", "em", "para", "com", "não", "é", "por"):')
+    st.subheader('20 Palavras Mais Frequentes (sem palavras irrelevantes - stopwords - tais como "e", "ou", "mas", "se", "um", "uma", "os", "das", "de", "em", "para", "com", "não", "é", "por"):')
     
     # Para cada par palavra-frequência nas 20 palavras mais comuns, exibe essa informação no aplicativo.
     # O loop for itera sobre cada tupla na lista palavras_mais_comuns, extraindo a palavra e sua frequência e exibindo-as.
