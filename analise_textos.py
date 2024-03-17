@@ -82,7 +82,7 @@ def main():
             st.write(f'{word}: {freq}')
 
         st.subheader('Nuvem de Palavras:')
-        generate_wordcloud(' '.join(map(str(filtered_words))))
+        generate_wordcloud(' '.join(map(str, filtered_words)))
 
 if __name__ == "__main__":
     main()
