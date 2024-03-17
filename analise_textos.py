@@ -1,4 +1,6 @@
 # Importações necessárias
+# Obsevação: pip freeze > requirements.txt gera uma lista de todas as bibliotecas instaladas no ambiente Python atual, juntamente com
+#suas versões,e redirecionar essa lista para um arquivo chamado requirements.txt
 
 import os #os: Usado para executar comandos do sistema operacional.
 import streamlit as st # streamlit: Framework para criar aplicativos web rápidos.
@@ -60,12 +62,12 @@ def gerar_nuvem_de_palavras(texto):
 
 if __name__ == "__main__":
     texto = ''  # Variável para armazenar o texto a ser analisado
-    st.title('Aplicação Web - Análise Estatística básica de Texto')  # Título do aplicativo
+    st.title('Aplicação Web - Análise Estatística básica de Texto - Evandro - IESB - Topicos Machine Learning - NLP')  # Título do aplicativo
 
     # Opções de entrada de dados pelo usuário
     opcao_entrada = st.radio(
         'Senhor (a) usuário (a), escolha o tipo de entrada de dados:',
-        ('Word', 'PDF', 'Link da Página', 'Texto Direto')
+        ('Word', 'PDF', 'Link da Página', 'Texto do(a) usuário(a)')
     )
 
     # Processa a entrada conforme a opção escolhida
@@ -83,12 +85,12 @@ if __name__ == "__main__":
         if url:
             texto = obter_texto_da_web(url)
     else:
-        texto = st.text_area('Insira o texto aqui:')
+        texto = st.text_area('Redija um texto ou copie e cole aqui:')
 
    # Se há texto, processa e exibe análises
 if texto:
     # Adiciona um subtítulo no aplicativo Streamlit com o texto 'Texto Analisado:'
-    st.subheader('Texto extraido da base informada pelo usuário:')
+    st.subheader('Texto extraido da base informada pelo(a) usuário(a):')
     
     # Exibe o texto obtido na interface do aplicativo. Isso permite ao usuário visualizar o texto que está sendo analisado.
     st.write(texto)  
@@ -105,7 +107,7 @@ if texto:
     palavras_mais_comuns = frequencia_palavras.most_common(20)
     
     # Adiciona outro subtítulo no aplicativo Streamlit para indicar que as próximas informações são as 20 palavras mais frequentes, excluindo stopwords.
-    st.subheader('Top 20 Palavras Mais Frequentes (exceto stopwords):')
+    st.subheader('20 Palavras Mais Frequentes (sem palavras irrelevantes - stopword - tais como "e", "ou", "mas", "se", "um", "uma", "os", "das", "de", "em", "para", "com", "não", "é", "por"):')
     
     # Para cada par palavra-frequência nas 20 palavras mais comuns, exibe essa informação no aplicativo.
     # O loop for itera sobre cada tupla na lista palavras_mais_comuns, extraindo a palavra e sua frequência e exibindo-as.
